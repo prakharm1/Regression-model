@@ -104,4 +104,4 @@ Therefore, the above analyses meet all basic assumptions of linear regression an
 4. Residual Plots
         
         par(mfrow = c(2, 2))
-    plot(amIntWtModel)
+        plot(amIntWtModel)
