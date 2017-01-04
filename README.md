@@ -95,13 +95,7 @@ Therefore, the above analyses meet all basic assumptions of linear regression an
         
         pairs(mtcars, panel=panel.smooth, main="Pair Graph of Motor Trend Car Road Tests")
 
-3. Scatter Plot of MPG vs. Weight by Transmission
-        
-        ggplot(mtcars, aes(x=wt, y=mpg, group=am, color=am, height=3, width=3)) + geom_point() +  
-        scale_colour_discrete(labels=c("Automatic", "Manual")) + 
-        xlab("weight") + ggtitle("Scatter Plot of MPG vs. Weight by Transmission")
-
-4. Residual Plots
+3. Residual Plots
         
         par(mfrow = c(2, 2))
         plot(amIntWtModel)
