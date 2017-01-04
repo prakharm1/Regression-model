@@ -1,0 +1,79 @@
+#################### Best Model ############################
+Call:
+lm(formula = mpg ~ wt + qsec + am + wt:am, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.5076 -1.3801 -0.5588  1.0630  4.3684 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    9.723      5.899   1.648 0.110893    
+wt            -2.937      0.666  -4.409 0.000149 ***
+qsec           1.017      0.252   4.035 0.000403 ***
+am1           14.079      3.435   4.099 0.000341 ***
+wt:am1        -4.141      1.197  -3.460 0.001809 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.084 on 27 degrees of freedom
+Multiple R-squared:  0.8959,	Adjusted R-squared:  0.8804 
+F-statistic: 58.06 on 4 and 27 DF,  p-value: 7.168e-13
+
+#################### Full Model ############################
+
+Call:
+lm(formula = mpg ~ ., data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.5087 -1.3584 -0.0948  0.7745  4.6251 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)  
+(Intercept) 23.87913   20.06582   1.190   0.2525  
+cyl6        -2.64870    3.04089  -0.871   0.3975  
+cyl8        -0.33616    7.15954  -0.047   0.9632  
+disp         0.03555    0.03190   1.114   0.2827  
+hp          -0.07051    0.03943  -1.788   0.0939 .
+drat         1.18283    2.48348   0.476   0.6407  
+wt          -4.52978    2.53875  -1.784   0.0946 .
+qsec         0.36784    0.93540   0.393   0.6997  
+vs1          1.93085    2.87126   0.672   0.5115  
+am1          1.21212    3.21355   0.377   0.7113  
+gear4        1.11435    3.79952   0.293   0.7733  
+gear5        2.52840    3.73636   0.677   0.5089  
+carb2       -0.97935    2.31797  -0.423   0.6787  
+carb3        2.99964    4.29355   0.699   0.4955  
+carb4        1.09142    4.44962   0.245   0.8096  
+carb6        4.47757    6.38406   0.701   0.4938  
+carb8        7.25041    8.36057   0.867   0.3995  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.833 on 15 degrees of freedom
+Multiple R-squared:  0.8931,	Adjusted R-squared:  0.779 
+F-statistic:  7.83 on 16 and 15 DF,  p-value: 0.000124
+
+#################### Annova Model #########################
+
+Analysis of Variance Table
+
+Model 1: mpg ~ am
+Model 2: mpg ~ wt + qsec + am
+Model 3: mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+Model 4: mpg ~ wt + qsec + am + wt:am
+  Res.Df    RSS  Df Sum of Sq       F    Pr(>F)    
+1     30 720.90                                    
+2     28 169.29   2    551.61 34.3604 2.509e-06 ***
+3     15 120.40  13     48.88  0.4685    0.9114    
+4     27 117.28 -12      3.13                      
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+                2.5 %    97.5 %
+(Intercept) -2.3807791 21.826884
+wt          -4.3031019 -1.569960
+qsec         0.4998811  1.534066
+am1          7.0308746 21.127981
+wt:am1      -6.5970316 -1.685721
+
